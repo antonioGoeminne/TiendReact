@@ -1,0 +1,23 @@
+.main-nav{
+    background-color: sandybrown;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand-nav{
+   font-size: 2rem;
+   white-space: nowrap;
+   padding-top: 1rem;
+   padding-left: 1rem;
+}
+.click-categories{
+    display: flex;
+    padding: 2rem;
+    cursor: pointer;
+    flex-direction: row;
+}
+.click-categories li{
+    padding-right: 1rem;
+    white-space: nowrap;
+}

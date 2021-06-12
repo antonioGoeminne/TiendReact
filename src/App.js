@@ -1,18 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { NavBar } from '../src/components/navBar/NavBar'
 
 function App() {
   const name = 'antonio';
+  const lastName = 'Goeminne';
+
   const handleClick = () => alert("hola")
 
   return (
 
    <div className='App'>
-     <h1 className ='wow'>Hola , soy {name}</h1>
-     <button onClick={handleClick}>guardar cambios</button>
-     <nav></nav>
+     <NavBar userName={name} userLastName={lastName} onClick={handleClick}></NavBar>
    </div>
   );
 }
 
-export default App;
+export default App; 
