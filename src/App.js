@@ -1,11 +1,16 @@
 import './App.css';
 import { NavBar } from './components/navBar/CartWidget/NavBar/NavBar'
-import { CartWidget } from './components/navBar/CartWidget/CartWidget'
+import { CartWidget } from './components/CartWidget/CartWidget'
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer'
+
+
 import {useState} from 'react'
 
 function App() {
 
 const [url, setUrl] = useState ('https://image.flaticon.com/icons/png/512/647/647881.png')
+const [message, setMessage] = useState ('Catalogo de productos vacio')
+
 console.log(url);
 
   const handleClick = () => {
@@ -17,9 +22,9 @@ console.log(url);
    <div className='App'>
      
      <NavBar userName= 'd' onClick={handleClick}>
-       
-     </NavBar>
      <CartWidget image={url}></CartWidget>
+     </NavBar>
+    <ItemListContainer greeting={message}></ItemListContainer>
 
 
    </div>
