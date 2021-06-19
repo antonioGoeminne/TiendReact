@@ -1,0 +1,42 @@
+.item-count-wrap{
+    width: 180px;
+    height: 180px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap:10%;
+}
+.item-count-number{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:40%;
+}
+.item-count-number img{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #ccc;
+    border-radius: 2em;
+    padding: 5px;
+    transition: all ease-in-out 0.15s;
+}
+.item-count-number img:hover{
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+.item-count-button{
+    border: 1px solid #ff5a00;
+    padding: 0.5rem;
+    cursor: pointer;
+    color:#ff5a00;
+    transition: all ease-in-out 0.15s;
+}
+.item-count-button:hover{
+    color: #fff;
+    background-color: #ff5a00;
+}

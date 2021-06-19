@@ -1,3 +1,4 @@
+import './ItemListContainer.css'
 
 export const ItemListContainer = ({greeting}) =>{
     return(
