@@ -8,12 +8,12 @@
     align-items: center;
     gap: 5%;
 }
-
 .click-categories{
     display: flex;
     align-items: center;
 }
 .click-categories li{
+ 
     margin-left: 2rem;
 }
 

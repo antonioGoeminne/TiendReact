@@ -1,0 +1,28 @@
+.item-wrap img{
+    height: 200px;
+    width: 120px;
+}
+.item-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 200px;
+    height: 400px;
+    gap:5%;
+}
+.item-wrap h2{
+    font-size: 1rem;
+    text-overflow: ellipsis;
+
+}
+.item-wrap h3{
+ 
+    font-size: 0.8rem;
+}
+
+.item-wrap p{
+    font-size: 1.5rem;
+    
+    font-weight: 300s ;
+}
