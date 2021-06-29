@@ -1,0 +1,21 @@
+.item-detail-wrap
+{
+	display: flex;
+	position: absolute;
+	justify-content: space-around;
+	align-items: flex-start;
+	top: 30%;
+	left: 20%;
+	height: 300px;
+	width: 50%;
+}
+.item-detail-wrap img{
+	height: 300px;
+	width: 200px;
+}
+.item-title-details{
+	margin: 10%;
+
+	font-size: 1rem;
+}
+
