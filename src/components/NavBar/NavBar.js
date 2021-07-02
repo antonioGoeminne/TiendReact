@@ -1,16 +1,27 @@
 import './NavBar.css'
+import { CartWidget } from '../CartWidget/CartWidget'
+import { Link, NavLink } from 'react-router-dom';
 
-export const NavBar = ({ onClick, children }) => {
+export const NavBar = ({ onClick }) => {
     return (
         <nav className="main-nav">
-            <h2 className="brand-nav" >Tienda libros </h2>
+            <Link to='/'>
+                <h2 className="brand-nav" >Tienda libros </h2>
+            </Link>
             <div className='searcher'><input type="text"></input></div>
-            <ul className="click-categories">                
-                <li onClick={onClick} className='categories-user'><img src="https://image.flaticon.com/icons/png/512/109/109718.png" alt="user"></img> <p>Mi cuenta</p></li>
-                <li onClick={onClick} className='categories-user'><img src='https://image.flaticon.com/icons/png/512/659/659828.png' alt="corazon"></img>Mis listas</li>
-                <li>{children}</li>
-            </ul>
+            <ul className="click-categories">
+                <NavLink to='/category/ficcion'>
+                    <li onClick={onClick}>ficcion</li>
+                </NavLink>
+                <NavLink  to='/category/ciencia'>
+                    <li onClick={onClick}>Ciencia</li>
+                </NavLink>
+                <NavLink  to='/category/romance'>
+                    <li onClick={onClick}>Romance</li>
+                </NavLink>
 
+            </ul>
+            <CartWidget />
         </nav>
-    );  
-} 
+    );
+}

@@ -1,10 +1,6 @@
-import './CartWidget.css'
+import cartWidget from '../../assets/icons/cartWidget.svg'
+import './cartWidget.css'
 
-export const CartWidget = ({image, stock}) =>{
-    return(
-        <span><img className='cart-widget' src={image} alt='cartWidget'></img></span>
-        
-        
-    );
-
-}
+export const CartWidget = () =>(
+    <img  className='cart' src={cartWidget} alt='cart'></img>
+)

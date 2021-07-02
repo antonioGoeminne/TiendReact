@@ -1,40 +1,57 @@
 import './ItemListContainer.css'
 import { ItemList } from '../ItemList/ItemList';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
+import { useParams } from 'react-router-dom';
+
+const items = [
+  {
+    id:1,
+    pictureURL: "https://images.cdn1.buscalibre.com/fit-in/360x360/24/d1/24d171286ccedac72e6bd203b6561d2e.jpg",
+    name:"la vaca purpura",
+    author:"seth godin",
+    price: 3000,
+    categoryId:'ficcion'
+},
+{
+  id:2,
+  pictureURL: "https://images-na.ssl-images-amazon.com/images/I/51RW-ursOgL._SX342_SY445_QL70_ML2_.jpg",
+  name:"Como ganar amigos e influir sobre las personas",
+  author:"Dale Carnegie",
+  price: 5000,
+  categoryId:'ciencia'
+},
+{
+  id:3,
+  pictureURL: "https://www.elejandria.com/covers/Orgullo_y_prejuicio-Jane_Austen-lg.png",
+  name:"Orgullo y prejuicio",
+  author:"Jane Austen",
+  price: 8000,
+  categoryId:'romance'
+}
+]
 
 export const ItemListContainer = () =>{
+      
+      const { id } = useParams()
+      const [productos, setProductos] = useState([])
 
 
-    const [productos, setProductos] = useState([]);
     useEffect(() => {
-      const getProductos = new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve([
-                {
-                    pictureURL: "https://images.cdn1.buscalibre.com/fit-in/360x360/24/d1/24d171286ccedac72e6bd203b6561d2e.jpg",
-                    name:"la vaca purpura",
-                    author:"seth godin",
-                    price: 3000  
-                },
-                {
-                  pictureURL: "https://images-na.ssl-images-amazon.com/images/I/51RW-ursOgL._SX342_SY445_QL70_ML2_.jpg",
-                  name:"Como ganar amigos e influir sobre las personas",
-                  author:"Dale Carnegie",
-                  price: 5000  
-              }
-            ]);
+          const getItems = () =>{
+            return id ? items.filter((item) => item.categoryId === id) : items
+          }
 
-          }, 2000);
+          const productos = getItems()
+          setProductos(productos)
+      console.log(productos);
 
-        });
-        getProductos.then((itemlists) =>{
-            setProductos(itemlists)
-        })
-  }, [])
+    }, [id])
+
 
     return(
-      
+      <section>
       <ItemList items={productos}></ItemList>
+      </section>
       
   )
-}
+    }

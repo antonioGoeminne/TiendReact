@@ -13,23 +13,7 @@
     align-items: center;
 }
 .click-categories li{
- 
+    cursor: pointer;
     margin-left: 2rem;
 }
 
-.categories-user{
-    display: flex;
-    align-items: center;
-    width: 10rem;
-    cursor: pointer;
-    transition: all ease-in-out 0.15s;
-}
-
-.categories-user:hover{
-    background-color: #ccc;
-}
-
-.categories-user img{
-    width:  20%;
-    height: 20%;
-}
