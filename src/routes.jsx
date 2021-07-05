@@ -15,7 +15,7 @@ export const Routes = () =>{
                     <NavBar></NavBar>
                     <ItemListContainer />
                 </Route>
-                <Route exact path='/name/:id'>
+                <Route exact path='/item/:id'>
                         <NavBar></NavBar>
                         <ItemDetailContainer />
                 </Route>

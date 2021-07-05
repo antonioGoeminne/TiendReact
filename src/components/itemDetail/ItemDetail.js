@@ -1,11 +1,11 @@
 import './itemDetail.css'
 
 export const ItemDetail = ({item}) => {
-const {id, name, author, price, pictureURL} = item
+const {author, id, name, pictureURL, price} = item
     
     return(
         <div className='item-detail-wrap' id={id}>
-        <img src={pictureURL}></img>
+        <img src={pictureURL} alt='picture'></img>
         <div className='item-title-details'>
         <h1>{name}</h1>
         <h1>{author}</h1>

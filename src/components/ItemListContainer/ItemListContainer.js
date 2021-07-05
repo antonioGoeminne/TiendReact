@@ -1,6 +1,6 @@
 import './ItemListContainer.css'
 import { ItemList } from '../ItemList/ItemList';
-import { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const items = [
@@ -43,7 +43,6 @@ export const ItemListContainer = () =>{
 
           const productos = getItems()
           setProductos(productos)
-      console.log(productos);
 
     }, [id])
 
