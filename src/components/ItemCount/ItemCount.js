@@ -19,13 +19,13 @@
  
         return(
 
-            <div className='item-count-wrap'>
+            <div className='item-count-wrap'> 
                 <div className='item-count-number' stock={stock}>
                     <img id='quitProduct' onClick={() => handleCount('-')} alt='-' src='https://image.flaticon.com/icons/png/512/149/149157.png'></img>
                     <p>{count}</p>
                     <img id='addProduct' onClick={() => handleCount('+')} alt='+' src='https://image.flaticon.com/icons/png/512/748/748113.png'></img>
                 </div>
-                <div className='item-count-button' onClick={onAdd} disabled={!stock}><p>Agregar al carrito</p></div>
+                <div className='item-count-button' onClick={() => onAdd(count)} disabled={!stock}><p>Agregar al carrito</p></div>
                  
             </div>
            

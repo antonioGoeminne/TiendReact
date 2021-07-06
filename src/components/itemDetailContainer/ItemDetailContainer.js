@@ -38,12 +38,11 @@ export const ItemDetailContainer = () => {
 
   useEffect(() => {
     const getItems = () => {
-      const producto = items.filter(item => item.id == id)
+      const producto = items.find(item => item.id == id)
       return producto
     }
     const producto = getItems()
     setProductos(producto)
-    console.log(producto);
 
   }, [id])
 

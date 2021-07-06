@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Home} from './pages/home/home'
+import {Home} from './pages/home'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
-import {ItemDetailContainer  } from './components/itemDetailContainer/ItemDetailContainer'
 import { NavBar } from './components/NavBar/NavBar';
+import { Detail } from './pages/Detail';
 
 export const Routes = () =>{
     return(
@@ -16,8 +16,7 @@ export const Routes = () =>{
                     <ItemListContainer />
                 </Route>
                 <Route exact path='/item/:id'>
-                        <NavBar></NavBar>
-                        <ItemDetailContainer />
+                       <Detail></Detail>
                 </Route>
             </Switch>
         </Router>
