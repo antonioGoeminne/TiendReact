@@ -4,8 +4,15 @@ import { ItemCount } from '../ItemCount/ItemCount'
 
 export const ItemDetail = ({item}) => {
 const {author, id, name, pictureURL, price} = item
-const[state, setState] = useState('Deseas confirmar')
-    console.log(state);
+const[cantidad, setCantidad] = useState(1)
+
+const onAdd = (e) => {
+    // almacenar el valor de itemCount en un estado interno de itemDetail para desaparecer itemCount
+    setCantidad(e.target.value)
+    document.getElementById("itemDetailBuying").style.display="none"
+    document.getElementById("itemDetailBuyed").style.display="block"
+}
+
     return(
         <div className='item-detail-wrap' id={id}>
         <img src={pictureURL} alt='picture'></img>
@@ -13,9 +20,8 @@ const[state, setState] = useState('Deseas confirmar')
         <h1>{name}</h1>
         <h1>{author}</h1>
         <h2>${price}</h2>
-        <p>{state}</p>
        </div>
-       <ItemCount stock={20} onAdd={handleAdd}/>
+       <ItemCount stock={20} onAdd={onAdd}/>
         </div>  
     )
 }
