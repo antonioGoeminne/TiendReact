@@ -3,6 +3,7 @@ import {Home} from './pages/home'
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { NavBar } from './components/NavBar/NavBar';
 import { Detail } from './pages/Detail';
+import { Cart } from './components/cart/Cart';
 
 export const Routes = () =>{
     return(
@@ -17,6 +18,9 @@ export const Routes = () =>{
                 </Route>
                 <Route exact path='/item/:id'>
                        <Detail></Detail>
+                </Route>
+                <Route exact path= '/cart'>
+                        <Cart />
                 </Route>
             </Switch>
         </Router>

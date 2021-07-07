@@ -9,8 +9,8 @@ const[cantidad, setCantidad] = useState(1)
 const onAdd = (e) => {
     // almacenar el valor de itemCount en un estado interno de itemDetail para desaparecer itemCount
     setCantidad(e.target.value)
-    document.getElementById("itemDetailBuying").style.display="none"
-    document.getElementById("itemDetailBuyed").style.display="block"
+    document.getElementById("itemDetailBuying").style.opacity="0"
+    document.getElementById("itemDetailBuyed").style.opacity="1"
 }
 
     return(

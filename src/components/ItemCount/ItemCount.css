@@ -12,7 +12,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap:40%;
 }
 .item-count-number img{
     height: 30px;
@@ -23,6 +22,8 @@
     border-radius: 2em;
     padding: 5px;
     transition: all ease-in-out 0.15s;
+    margin-left:10%;
+    margin-right: 10%;
 }
 .item-count-number img:hover{
     box-shadow: 2px 2px 2px #ccc;
@@ -38,4 +39,14 @@
 .item-count-button:hover{
     color: #fff;
     background-color: #ff5a00;
+}
+.item-buyed{
+    opacity: 0;
+    cursor: pointer;
+    border: 1px solid rebeccapurple;
+    border-radius: 1rem;
+   height: 50%;
+   width: 100%;
+    padding: 1rem;
+    transition: all ease-in-out 0.15s;
 }
