@@ -4,9 +4,11 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { NavBar } from './components/NavBar/NavBar';
 import { Detail } from './pages/Detail';
 import { Cart } from './components/cart/Cart';
+import { CartProvider } from './components/context/CartContext';
 
 export const Routes = () =>{
     return(
+        <CartProvider>
         <Router>
             <Switch>
                 <Route exact path='/'>
@@ -24,5 +26,6 @@ export const Routes = () =>{
                 </Route>
             </Switch>
         </Router>
+        </CartProvider>
     )
 }
