@@ -1,5 +1,5 @@
 import './itemDetail.css'
-import { useState, useContext , useEffect} from 'react'
+import { useState, useContext } from 'react'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
@@ -8,12 +8,13 @@ export const ItemDetail = ({item}) => {
 const {author, id, name, pictureURL, price} = item
 const[cantidad, setCantidad] = useState(1)
 const[clicked, setClicked] = useState(false)
-const product = useContext(CartContext)
+
+const{addProduct, setQuantity} = useContext(CartContext)
+
 
 const onAdd = (e) => {
     // almacenar el valor de itemCount en un estado interno de itemDetail para desaparecer itemCount
     setCantidad(e.target.value)
-    console.log(product);
 }
 const isClicked = () =>{
     setClicked(true)
@@ -26,7 +27,7 @@ const isClicked = () =>{
         <h1>{author}</h1>
         <h2>${price}</h2>
        </div>
-            {clicked == false ? <ItemCount stock={20} onAdd={onAdd} isClicked={isClicked}/> : <Link to='/cart'><div className='item-buyed'>deseas confirmar la compra?</div></Link>}
+            {clicked == false ? <ItemCount stock={20} onAdd={onAdd} isClicked={isClicked}/> : <Link to='/cart'><div className='item-buyed' onClick={addProduct(cantidad)}>deseas confirmar la compra?</div></Link>}
         </div>  
     )   
 }
