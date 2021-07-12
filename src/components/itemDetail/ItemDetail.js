@@ -9,7 +9,7 @@ const {author, id, name, pictureURL, price} = item
 const[cantidad, setCantidad] = useState(1)
 const[clicked, setClicked] = useState(false)
 
-const{addProduct, setQuantity} = useContext(CartContext)
+const{addItem, setQuantity} = useContext(CartContext)
 
 
 const onAdd = (e) => {
@@ -27,7 +27,7 @@ const onAdd = (e) => {
         <h1>{author}</h1>
         <h2>${price}</h2>
        </div>
-            {clicked == false ? <ItemCount stock={20} onAdd={onAdd}/> : <Link to='/cart'><div className='item-buyed' onClick={addProduct(cantidad)}>deseas confirmar la compra?</div></Link>}
+            {clicked == false ? <ItemCount stock={20} onAdd={onAdd}/> : <Link to='/cart'><div className='item-buyed' onClick={addItem(item, cantidad)}>deseas confirmar la compra?</div></Link>}
         </div>  
     )   
 }
