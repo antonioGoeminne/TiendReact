@@ -15,10 +15,10 @@ const{addProduct, setQuantity} = useContext(CartContext)
 const onAdd = (e) => {
     // almacenar el valor de itemCount en un estado interno de itemDetail para desaparecer itemCount
     setCantidad(e.target.value)
-}
-const isClicked = () =>{
     setClicked(true)
+
 }
+
     return(
         <div className='item-detail-wrap' id={id}>
         <img src={pictureURL} alt='picture'></img>
@@ -27,7 +27,7 @@ const isClicked = () =>{
         <h1>{author}</h1>
         <h2>${price}</h2>
        </div>
-            {clicked == false ? <ItemCount stock={20} onAdd={onAdd} isClicked={isClicked}/> : <Link to='/cart'><div className='item-buyed' onClick={addProduct(cantidad)}>deseas confirmar la compra?</div></Link>}
+            {clicked == false ? <ItemCount stock={20} onAdd={onAdd}/> : <Link to='/cart'><div className='item-buyed' onClick={addProduct(cantidad)}>deseas confirmar la compra?</div></Link>}
         </div>  
     )   
 }
