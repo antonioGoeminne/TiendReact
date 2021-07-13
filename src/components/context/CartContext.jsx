@@ -3,15 +3,13 @@ import { createContext, useState } from "react";
 export const CartContext = createContext()
 
 export const CartProvider = ({children}) => {
-        const[product, setProduct] = useState(4)
+        const[product, setProduct] = useState([])
         const[quantity, setQuantity] = useState([])
         
        const addItem = (product, quantity) =>{
-           if(product !== product){
-           setProduct(product)
-           }
-           setQuantity(quantity)
            
+           setProduct(product)           
+           setQuantity(quantity)
        }             
                                                                                                                                                                                           
 

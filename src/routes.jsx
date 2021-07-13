@@ -22,6 +22,7 @@ export const Routes = () =>{
                        <Detail></Detail>
                 </Route>
                 <Route exact path= '/cart'>
+                        <NavBar />
                         <Cart />
                 </Route>
             </Switch>

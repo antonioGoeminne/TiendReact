@@ -1,0 +1,39 @@
+.cart-wrap{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top:200px;
+    left:100px;
+    width: calc(100% - 100px);
+}
+
+.book-wrap{
+    display: flex;
+}
+.book-info{
+    flex-direction: column;
+}
+
+.book-picture{
+    width: 130px;
+    height: 180px;
+}
+.book-title{
+    font-weight: 800;
+    padding-left: 2rem;
+}
+.book-author{
+    padding-left: 7rem;
+}
+.price-wrap{
+    display: flex;
+}
+.subTotal-price-wrap{
+    display: flex;
+    width: 40%;
+    gap: 10%;
+}
+.price-wrap{
+    flex-direction: column;
+    justify-content: space-evenly;
+}
