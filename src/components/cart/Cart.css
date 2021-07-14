@@ -1,14 +1,17 @@
 .cart-wrap{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     position: relative;
     top:200px;
     left:100px;
     width: calc(100% - 100px);
+    padding-bottom: 5rem;
 }
 
 .book-wrap{
     display: flex;
+    flex-wrap: wrap;
 }
 .book-info{
     flex-direction: column;

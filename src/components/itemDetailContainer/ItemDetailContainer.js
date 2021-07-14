@@ -1,7 +1,6 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { ItemDetail } from '../itemDetail/ItemDetail'
-import { CartContext } from "../context/CartContext";
 
 const items = [
   {
@@ -34,7 +33,6 @@ const items = [
 export const ItemDetailContainer = () => {
 
   const { id } = useParams()
-  const{addItem} = useContext(CartContext)
 
   const [productos, setProductos] = useState([]);
 

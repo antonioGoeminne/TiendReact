@@ -9,7 +9,7 @@ const {author, id, name, pictureURL, price} = item
 const[cantidad, setCantidad] = useState(1)
 const[clicked, setClicked] = useState(false)
 
-const{addItem, setQuantity} = useContext(CartContext)
+const{addItem} = useContext(CartContext)
 
 
 const onAdd = (cantidad) => {
