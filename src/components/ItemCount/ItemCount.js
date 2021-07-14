@@ -25,7 +25,7 @@
                     <p>{count}</p>
                     <img id='addProduct' onClick={() => handleCount('+')} alt='+' src='https://image.flaticon.com/icons/png/512/748/748113.png'></img>
                 </div>
-                <button type='submit' className='item-count-button' onClick={onAdd} disabled={!stock} value={count}>Agregar al carrito</button>
+                <button type='submit' className='item-count-button' onClick={() => onAdd(count)} disabled={!stock} value={count}>Agregar al carrito</button>
                 </div>
                
                  </Fragment>
