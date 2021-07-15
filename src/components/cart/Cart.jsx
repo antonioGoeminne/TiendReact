@@ -3,14 +3,14 @@ import { Fragment, useContext } from "react"
 import './Cart.css'
 export const Cart = () => {
 
-        const { product, quantity } = useContext(CartContext)
+        const { cart, quantity } = useContext(CartContext)
         
                 
         
 
         return (
                 <Fragment>
-                        {product.map((product) => {
+                        {cart.map((product) => {
                                 const precioSubTotal = product.item.price * product.quantity
 return(
                 <div className='cart-wrap'>
