@@ -4,14 +4,15 @@ import './Cart.css'
 export const Cart = () => {
 
         const { cart, quantity } = useContext(CartContext)
-        
-                
+
         
 
         return (
                 <Fragment>
                         {cart.map((product) => {
-                                const precioSubTotal = product.item.price * product.quantity
+                                const subTotalPricePerProduct = product.item.price * product.quantity
+                                console.log(product.quantity);
+                                console.log(subTotalPricePerProduct);
 return(
                 <div className='cart-wrap'>
                                 
@@ -34,7 +35,7 @@ return(
                                 </div>
                                 <div className='price-wrap'>
                                 <h3>subtotal</h3>
-                                <h3>${precioSubTotal}</h3>
+                                <h3>${subTotalPricePerProduct}</h3>
                                 </div>
 
                         </div>
