@@ -3,6 +3,7 @@ import { useState, useContext } from 'react'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
+import { dataBase } from '../../Firebase/firebase'
 
 export const ItemDetail = ({item}) => {
 const {author, id, name, pictureURL, price} = item

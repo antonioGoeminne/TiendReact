@@ -1,50 +1,33 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
 import { ItemDetail } from '../itemDetail/ItemDetail'
-
-const items = [
-  {
-    id: 1,
-    pictureURL: "https://images.cdn1.buscalibre.com/fit-in/360x360/24/d1/24d171286ccedac72e6bd203b6561d2e.jpg",
-    name: "la vaca purpura",
-    author: "seth godin",
-    price: 3000,
-    categoryId: 'ficcion'
-  },
-  {
-    id: 2,
-    pictureURL: "https://images-na.ssl-images-amazon.com/images/I/51RW-ursOgL._SX342_SY445_QL70_ML2_.jpg",
-    name: "Como ganar amigos e influir sobre las personas",
-    author: "Dale Carnegie",
-    price: 5000,
-    categoryId: 'ciencia'
-  },
-  {
-    id: 3,
-    pictureURL: "https://www.elejandria.com/covers/Orgullo_y_prejuicio-Jane_Austen-lg.png",
-    name: "Orgullo y prejuicio",
-    author: "Jane Austen",
-    price: 8000,
-    categoryId: 'romance'
-  }
-]
+import { dataBase } from "../../Firebase/firebase";
+import { useParams } from "react-router";
 
 
 export const ItemDetailContainer = () => {
 
-  const { id } = useParams()
+  const { id } = useParams();
 
   const [productos, setProductos] = useState([]);
 
-  useEffect(() => {
-    const getItems = () => {
-      const producto = items.find(item => item.id == id)
-      return producto
-    }
-    const producto = getItems()
-    setProductos(producto)
+  useEffect(() =>{
+    const db = dataBase;
+  const itemCollection = db.collection('libros')
+  const item = itemCollection.doc(id)
 
-  }, [id])
+
+  item.get().then((doc)=> {
+    if(!doc.exists){
+      console.log('no results');
+      return;
+    }
+    setProductos({id: doc.id, ...doc.data() });
+  }).catch((error) => {
+    console.log('error searching items', error);
+  })
+  
+  }, [])
+  
 
 
 
