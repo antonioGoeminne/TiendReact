@@ -16,8 +16,10 @@ useEffect(() =>{
   itemCollection.get().then((querySnapshot)=> {
     if(querySnapshot.size == 0){
       console.log('no results');
+    }else{
+      const filtrados = querySnapshot.docs.map(doc => ({id: doc.id, ...doc.data()} ))
+      setProductos(filtrados)
     }
-    setProductos(querySnapshot.docs.map(doc => doc.data()));
   }).catch((error) => {
     console.log('error searching items', error);
   })
