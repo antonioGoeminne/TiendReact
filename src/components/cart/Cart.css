@@ -58,3 +58,9 @@
     background-color: rgb(236, 235, 235);
     padding: 1rem;
 }
+.remove-item{
+    cursor: pointer;
+    align-self: center;
+    width: 25px;
+    height: 25px;
+}

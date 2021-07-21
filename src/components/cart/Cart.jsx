@@ -1,21 +1,26 @@
+import deleteButton from "../../assets/icons/deleteButton.svg"
 import { CartContext } from "../context/CartContext"
 import { Fragment, useContext, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import './Cart.css'
 export const Cart = () => {
 
-        const { cart, setTotal, total } = useContext(CartContext)
+        const { cart, setTotal, total , setProductQuantity, removeItem} = useContext(CartContext)
 
         useEffect(() => {
                 const nextTotal = cart.map(({item, quantity}) => item.price * quantity).reduce((totalPrice, currentPrice) => totalPrice + currentPrice,0)
+                const nextQuantity = cart.map(({quantity})=> quantity).reduce((quantity) => quantity +1, 0)
+                setProductQuantity(nextQuantity)
                 setTotal(nextTotal)
         }, [cart])
     
-
-
+       
+ 
         return (
                 <Fragment>
                         {cart.map((product) => {
                                 const subTotalPricePerProduct = product.item.price * product.quantity
+                                console.log(product.item.id);
                                 return (
                                         <div className='cart-wrap'>
 
@@ -28,6 +33,7 @@ export const Cart = () => {
                                                 </div>
 
                                                 <div className='subTotal-price-wrap'>
+                                                        <img className='remove-item' src={deleteButton} onClick={(() => removeItem(product.item.id))}></img>
                                                         <div className='price-wrap'>
                                                                 <h3>Precio</h3>
                                                                 <h3>${product.item.price}</h3>
@@ -47,7 +53,7 @@ export const Cart = () => {
                                 )
                         })
                         }
-                                                <div className='total-price'><p className='total-price-text'>Precio Total: {total}</p><button className='total-price-btn-confirm'>Confirmar Compra</button></div>
+                                                <div className='total-price'><p className='total-price-text'>Precio Total:${total}</p><Link to='./order'><button className='total-price-btn-confirm'>Confirmar Compra</button></Link></div>
 
                 </Fragment>
         )

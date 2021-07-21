@@ -5,6 +5,7 @@ import { NavBar } from './components/NavBar/NavBar';
 import { Detail } from './pages/Detail';
 import { Cart } from './components/cart/Cart';
 import { CartProvider } from './components/context/CartContext';
+import {Order} from './components/order/Order';
 
 export const Routes = () =>{
     return(
@@ -24,6 +25,9 @@ export const Routes = () =>{
                 <Route exact path= '/cart'>
                         <NavBar />
                         <Cart />
+                </Route>
+                <Route exact path= '/order'>
+                    <Order />
                 </Route>
             </Switch>
         </Router>

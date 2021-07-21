@@ -1,3 +1,18 @@
 .cart{
     cursor: pointer;
 }
+.product-quantity{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color:#fff;
+    position: relative;
+    bottom: 40px;
+    left:10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid red;
+    background-color: red;
+}
