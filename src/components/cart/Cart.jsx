@@ -20,7 +20,6 @@ export const Cart = () => {
                 <Fragment>
                         {cart.map((product) => {
                                 const subTotalPricePerProduct = product.item.price * product.quantity
-                                console.log(product.item.id);
                                 return (
                                         <div className='cart-wrap'>
 

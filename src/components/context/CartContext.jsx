@@ -28,26 +28,26 @@ export const CartProvider = ({children}) => {
        }             
 
        const removeItem = (itemId) =>{
-            const newCart = cart.filter((product) => product.id !== itemId)
-            console.log(itemId);
-            setCart(newCart)
-            console.log(cart);
+            setCart(cart.filter((product) => product.item.id !== itemId))
        }
 
-       const getOrder = (items) => {
+       const getOrder = (items, user) => {
+           console.log(user);
          items = cart.map(({ item }) => ({
                 id:item.id,
                 title: item.title,
                 price: item.price,
         }))
+        user =
+            {
+                name:user.name,
+                surname:user.surname,
+                email:user.email
+        }
         return{
-                buyer:{
-                        name:'antonio',
-                        phone:'11233423',
-                        email:'migue@asd.com'
-                }, 
+                user,
                 items,
-                total,
+                total
         }
 }
 
