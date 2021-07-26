@@ -1,0 +1,24 @@
+.order-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.order--title{
+    font-size:2rem;
+    margin-bottom: 2rem;
+}
+.order--info{
+    font-weight: 800;
+    padding: 1rem;
+}
+.order--button{
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: all ease-in-out 0.2s;
+}
+.order--button:hover{
+    background-color: #ccc;
+}

@@ -5,7 +5,7 @@ import { NavBar } from './components/NavBar/NavBar';
 import { Detail } from './pages/Detail';
 import { Cart } from './components/cart/Cart';
 import { CartProvider } from './components/context/CartContext';
-import { OrderContainer } from './components/orderContainer/OrderContainer';
+import { Order} from './components/order/Order';
 
 export const Routes = () =>{
     return(
@@ -27,7 +27,7 @@ export const Routes = () =>{
                         <Cart />
                 </Route>
                 <Route exact path= '/order'>
-                    <OrderContainer />
+                    <Order />
                 </Route>
             </Switch>
         </Router>

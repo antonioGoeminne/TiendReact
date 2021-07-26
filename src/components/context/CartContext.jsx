@@ -50,10 +50,13 @@ export const CartProvider = ({children}) => {
                 total
         }
 }
-
+        const restartCart = () =>{
+            cart.splice(0,cart.length)
+            console.log(cart);
+        }
 
         return(
-            <CartContext.Provider value={{cart, addItem, setTotal, total, setProductQuantity, productQuantity, removeItem, getOrder}}>
+            <CartContext.Provider value={{cart, addItem, setTotal, total, setProductQuantity, productQuantity, removeItem, getOrder, restartCart}}>
                 {children}
             </CartContext.Provider>
         )

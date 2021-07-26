@@ -8,7 +8,6 @@ export const NavBar = ({ onClick }) => {
             <Link to='/'>
                 <h2 className="brand-nav" >Tienda libros </h2>
             </Link>
-            <div className='searcher'><input type="text"></input></div>
             <ul className="click-categories">
                 <NavLink to='/category/ficcion'>
                     <li onClick={onClick}>ficcion</li>

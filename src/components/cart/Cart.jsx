@@ -52,7 +52,7 @@ export const Cart = () => {
                                 )
                         })
                         }
-                                                <div className='total-price'><p className='total-price-text'>Precio Total:${total}</p><Link to='./order'><button className='total-price-btn-confirm'>Confirmar Compra</button></Link></div>
+                                                { cart.length > 0 ? <div className='total-price'><p className='total-price-text'>Precio Total:${total}</p><Link to='./order'><button className='total-price-btn-confirm'>Confirmar Compra</button></Link></div>: <div className='total-price__empty-cart'>Aun no tienes productos en el carrito</div>}
 
                 </Fragment>
         )

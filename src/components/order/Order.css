@@ -1,0 +1,13 @@
+.form-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 900px;
+}
+
+.buy-form{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+
+}
