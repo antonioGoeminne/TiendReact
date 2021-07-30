@@ -1,63 +1,66 @@
 import { createContext, useState } from "react";
+import firebase from 'firebase/app'
+import '@firebase/firestore'
 
 export const CartContext = createContext()
 
-export const CartProvider = ({children}) => {
-        const[cart, setCart] = useState([])
-        const[total, setTotal] = useState(0)
-        const[productQuantity, setProductQuantity] = useState(0)
+export const CartProvider = ({ children }) => {
+    const [cart, setCart] = useState([])
+    const [total, setTotal] = useState(0)
+    const [productQuantity, setProductQuantity] = useState(0)
 
-    
-        const isInCart = id =>{
-            return cart.some((obj) => obj.item.id === id)
-        }
 
-           const addItem = (item, quantity) =>{
+    const isInCart = id => {
+        return cart.some((obj) => obj.item.id === id)
+    }
 
-            if(cart.length > 0){
-                if(isInCart(item.id)){
-                    let pos = cart.findIndex(obj => obj.item.id === item.id)
-                    let newCart = cart
-                    newCart[pos].quantity += quantity
-                    setCart(newCart)
+    const addItem = (item, quantity) => {
 
-                }else{
-                    setCart([...cart, {item, quantity}])
-                }
-            }else setCart([{item, quantity}])    
-       }             
+        if (cart.length > 0) {
+            if (isInCart(item.id)) {
+                let pos = cart.findIndex(obj => obj.item.id === item.id)
+                let newCart = cart
+                newCart[pos].quantity += quantity
+                setCart(newCart)
 
-       const removeItem = (itemId) =>{
-            setCart(cart.filter((product) => product.item.id !== itemId))
-       }
+            } else {
+                setCart([...cart, { item, quantity }])
+            }
+        } else setCart([{ item, quantity }])
+    }
 
-       const getOrder = (items, user) => {
-           console.log(user);
-         items = cart.map(({ item }) => ({
-                id:item.id,
-                title: item.title,
-                price: item.price,
+    const removeItem = (itemId) => {
+        setCart(cart.filter((product) => product.item.id !== itemId))
+    }
+
+    const getOrder = (items, user) => {
+        items = cart.map(({ item }) => ({
+            id: item.id,
+            title: item.title,
+            price: item.price,
         }))
         user =
-            {
-                name:user.name,
-                surname:user.surname,
-                email:user.email
-        }
-        return{
-                user,
-                items,
-                total
-        }
-}
-        const restartCart = () =>{
-            cart.splice(0,cart.length)
-            console.log(cart);
-        }
+        {
+            name: user.name,
+            surname: user.surname,
+            email: user.email,
+            date: firebase.firestore.Timestamp.fromDate(new Date())
 
-        return(
-            <CartContext.Provider value={{cart, addItem, setTotal, total, setProductQuantity, productQuantity, removeItem, getOrder, restartCart}}>
-                {children}
-            </CartContext.Provider>
-        )
+        }
+        return {
+            user,
+            items,
+            total
+        }
+    }
+    const restartCart = () => {
+        cart.splice(0, cart.length)
+        setProductQuantity(0)
+    }
+
+    return (
+        <CartContext.Provider value={{ cart, addItem, setTotal, total, setProductQuantity, productQuantity, removeItem, getOrder, restartCart }}>
+            {children}
+        </CartContext.Provider>
+    )
 }

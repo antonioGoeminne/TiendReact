@@ -1,12 +1,12 @@
 import './Order.css'
 import { useContext, useState } from "react"
 import { CartContext } from "../context/CartContext"
-import {OrderComplete} from './orderComplete/OrderComplete'
+import { OrderComplete } from './orderComplete/OrderComplete'
 import { dataBase } from '../../Firebase/firebase'
 
 export const Order = () => {
 
-    const { getOrder, cart} = useContext(CartContext)
+    const { getOrder, cart } = useContext(CartContext)
     const [orderId, setOrderId] = useState([])
     const [clicked, setClicked] = useState(false)
     const [user, setUser] = useState({

@@ -41,9 +41,9 @@
     background-color: #ff5a00;
 }
 .item-buyed{
-    border: 1px solid royalblue;
+    border: 1px solid orange;
     padding: 1rem;
     font-size: 1.3rem;
-    color: royalblue;
+    color: orange;
     font-weight: 800;
 }

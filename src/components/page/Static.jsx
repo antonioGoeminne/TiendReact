@@ -1,12 +1,12 @@
-import {NavBar} from '../NavBar/NavBar'
-import {ItemListContainer} from '../ItemListContainer/ItemListContainer'
+import { NavBar } from '../NavBar/NavBar'
+import { ItemListContainer } from '../ItemListContainer/ItemListContainer'
 import { Fragment } from 'react'
 
 export const Static = () => {
-    return(
+    return (
         <Fragment>
-        <NavBar> </NavBar>
-        <ItemListContainer></ItemListContainer>
+            <NavBar />
+            <ItemListContainer />
         </Fragment>
     )
 }

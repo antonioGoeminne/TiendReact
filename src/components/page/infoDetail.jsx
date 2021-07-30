@@ -4,13 +4,13 @@ import { Fragment } from "react"
 import { NavBar } from "../NavBar/NavBar"
 
 export const InfoDetail = (params) => {
-    return(
-    <Fragment>
-    <NavBar />
-    <ItemDetailContainer>
-    <ItemCount stock={20}></ItemCount>
-    </ItemDetailContainer>
-  
-    </Fragment>
+    return (
+        <Fragment>
+            <NavBar />
+            <ItemDetailContainer>
+                <ItemCount stock={20}></ItemCount>
+            </ItemDetailContainer>
+
+        </Fragment>
     )
 }

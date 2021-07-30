@@ -12,10 +12,10 @@ export const NavBar = ({ onClick }) => {
                 <NavLink to='/category/ficcion'>
                     <li onClick={onClick}>ficcion</li>
                 </NavLink>
-                <NavLink  to='/category/ciencia'>
+                <NavLink to='/category/ciencia'>
                     <li onClick={onClick}>Ciencia</li>
                 </NavLink>
-                <NavLink  to='/category/romance'>
+                <NavLink to='/category/romance'>
                     <li onClick={onClick}>Romance</li>
                 </NavLink>
 
