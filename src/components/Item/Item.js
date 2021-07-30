@@ -9,7 +9,7 @@ export const Item = ({ item }) => {
         <Link to={`/item/${id}`}>
             <div id={id} className='item-wrap'>
                 <div className='img-wrap'>
-                    <img src={pictureURL}></img>
+                    <img alt='picture_product' src={pictureURL}></img>
                 </div>
                 <div className='item-info'>
                     <h2>{name}</h2>

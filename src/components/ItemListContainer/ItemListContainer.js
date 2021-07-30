@@ -16,7 +16,7 @@ export const ItemListContainer = () =>{
     const db = dataBase ;
     const itemCollection = db.collection('libros')
     itemCollection.get().then((querySnapshot)=> {
-      if(querySnapshot.size == 0){
+      if(querySnapshot.size === 0){
         console.log('no results');
     }else{
       setLoading(true)
@@ -37,7 +37,7 @@ export const ItemListContainer = () =>{
 
     return(
       <section>
-        {loading == true ? (
+        {loading === true ? (
           <ItemList items={productos}></ItemList>
         ) : (<Loader />)}
       </section>
