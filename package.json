@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "homepage": "https://antoniogoeminne.github.io/TiendReact/",
-    "deploy": "gh-pages -d build",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -17,6 +16,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
