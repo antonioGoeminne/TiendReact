@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/TiendReact/static/css/main.92e28fbc.chunk.css",
-    "main.js": "/TiendReact/static/js/main.a7125df0.chunk.js",
-    "main.js.map": "/TiendReact/static/js/main.a7125df0.chunk.js.map",
+    "main.js": "/TiendReact/static/js/main.5f93ea6c.chunk.js",
+    "main.js.map": "/TiendReact/static/js/main.5f93ea6c.chunk.js.map",
     "runtime-main.js": "/TiendReact/static/js/runtime-main.3a34bf8d.js",
     "runtime-main.js.map": "/TiendReact/static/js/runtime-main.3a34bf8d.js.map",
     "static/js/2.a8b5f81c.chunk.js": "/TiendReact/static/js/2.a8b5f81c.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.3a34bf8d.js",
     "static/js/2.a8b5f81c.chunk.js",
     "static/css/main.92e28fbc.chunk.css",
-    "static/js/main.a7125df0.chunk.js"
+    "static/js/main.5f93ea6c.chunk.js"
   ]
 }
